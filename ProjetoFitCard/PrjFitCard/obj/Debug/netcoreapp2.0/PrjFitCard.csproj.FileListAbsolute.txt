@@ -1,0 +1,11 @@
+C:\Users\flavio\Desktop\ProjetoFitCard\PrjFitCard\bin\Debug\netcoreapp2.0\PrjFitCard.deps.json
+C:\Users\flavio\Desktop\ProjetoFitCard\PrjFitCard\bin\Debug\netcoreapp2.0\PrjFitCard.runtimeconfig.json
+C:\Users\flavio\Desktop\ProjetoFitCard\PrjFitCard\bin\Debug\netcoreapp2.0\PrjFitCard.runtimeconfig.dev.json
+C:\Users\flavio\Desktop\ProjetoFitCard\PrjFitCard\bin\Debug\netcoreapp2.0\PrjFitCard.dll
+C:\Users\flavio\Desktop\ProjetoFitCard\PrjFitCard\bin\Debug\netcoreapp2.0\PrjFitCard.pdb
+C:\Users\flavio\Desktop\ProjetoFitCard\PrjFitCard\obj\Debug\netcoreapp2.0\PrjFitCard.csprojAssemblyReference.cache
+C:\Users\flavio\Desktop\ProjetoFitCard\PrjFitCard\obj\Debug\netcoreapp2.0\PrjFitCard.csproj.CoreCompileInputs.cache
+C:\Users\flavio\Desktop\ProjetoFitCard\PrjFitCard\obj\Debug\netcoreapp2.0\PrjFitCard.AssemblyInfoInputs.cache
+C:\Users\flavio\Desktop\ProjetoFitCard\PrjFitCard\obj\Debug\netcoreapp2.0\PrjFitCard.AssemblyInfo.cs
+C:\Users\flavio\Desktop\ProjetoFitCard\PrjFitCard\obj\Debug\netcoreapp2.0\PrjFitCard.dll
+C:\Users\flavio\Desktop\ProjetoFitCard\PrjFitCard\obj\Debug\netcoreapp2.0\PrjFitCard.pdb
