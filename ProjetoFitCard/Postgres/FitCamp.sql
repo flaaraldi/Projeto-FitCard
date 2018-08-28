@@ -66,7 +66,7 @@ CREATE TABLE estabelecimentos
 
 CREATE TABLE auditoria_estabelecimentos
 (
-  seq_aud smallint NOT NULL DEFAULT 0,
+  seq_aud serial NOT NULL,
   schema_name text NOT NULL,
   table_name text NOT NULL,
   user_name text,
