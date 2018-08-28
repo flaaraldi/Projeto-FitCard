@@ -1,0 +1,102 @@
+<form class="emp-form" #estabelecimentoForm="ngForm"  (ngSubmit)="onSubmit(estabelecimentoForm)">
+<div class="form-group">
+    <input class="form-control" name="razao_social" #razao_social="ngModel" [(ngModel)]="estabelecimentoService.selectEstabelecimento.razao_social" placeholder="Razão Social" required>
+    <div class="validation-error" *ngIf="razao_social.invalid && razao_social.touched">Campo Obrigatório</div>
+</div>
+<div class="form-group">
+    <input class="form-control" name="nome_fantasia" #nome_fantasia="ngModel" [(ngModel)]="estabelecimentoService.selectEstabelecimento.nome_fantasia" placeholder="Nome Fantasia">
+</div>
+<div class="form-group">
+  <input class="form-control" pattern="^([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})" mask="00.000.000/0000-00" name="cnpj" #cnpj="ngModel" [(ngModel)]="estabelecimentoService.selectEstabelecimento.cnpj" placeholder="CNPJ" required>
+  <div class="validation-error" *ngIf="cnpj.errors?.pattern && cnpj.touched">CNPJ Inválido</div>
+  <div class="validation-error" *ngIf="cnpj.invalid && cnpj.touched">Campo Obrigatório</div>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-7">
+    <select class="form-control" name="id_categoria" #id_categoria="ngModel" [(ngModel)]="estabelecimentoService.selectEstabelecimento.id_categoria">
+      <option [value]="null">Selecionar Categoria</option>
+      <option *ngFor="let categoria of categorias" value= {{categoria.seq}}>{{categoria.descricao}}</option>
+    </select>
+  </div>
+  <div class="form-group col-md-5">
+    <select id="cod_status" class="form-control" name="id_status" #id_status="ngModel" [(ngModel)]="estabelecimentoService.selectEstabelecimento.id_status">
+      <option [value]="null">Selecionar Status</option>
+      <option *ngFor="let statu of status" value={{statu.seq}}>{{statu.descricao}}</option>
+    </select>
+  </div>
+</div>
+<div class="form-group">
+    <input class="form-control" name="endereco" #endereco="ngModel" [(ngModel)]="estabelecimentoService.selectEstabelecimento.endereco" placeholder="Endereço">
+</div>
+<div class="form-row">
+  <div class="form-group col-md-9">
+    <input class="form-control" name="cidade" #cidade="ngModel" [(ngModel)]="estabelecimentoService.selectEstabelecimento.cidade" placeholder="Cidade">
+  </div>
+  <div class="form-group col-md-3">
+    <select class="form-control" name="estado" #estado="ngModel" [(ngModel)]="estabelecimentoService.selectEstabelecimento.estado">
+      <option value="">Estado</option>
+      <option value="AC">AC</option>
+      <option value="AL">AL</option>
+      <option value="AP">AP</option>
+      <option value="AM">AM</option>
+      <option value="BA">BA</option>
+      <option value="CE">CE</option>
+      <option value="DF">DF</option>
+      <option value="ES">ES</option>
+      <option value="GO">GO</option>
+      <option value="MA">MA</option>
+      <option value="MT">MT</option>
+      <option value="MS">MS</option>
+      <option value="MG">MG</option>
+      <option value="PA">PA</option>
+      <option value="PB">PB</option>
+      <option value="PR">PR</option>
+      <option value="PE">PE</option>
+      <option value="PI">PI</option>
+      <option value="RJ">RJ</option>
+      <option value="RN">RN</option>
+      <option value="RS">RS</option>
+      <option value="RO">RO</option>
+      <option value="RR">RR</option>
+      <option value="SC">SC</option>
+      <option value="SP">SP</option>
+      <option value="SE">SE</option>
+      <option value="TO">TO</option>
+    </select>
+  </div>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-5">
+    <input class="form-control" name="telefone" #telefone="ngModel" [(ngModel)]="estabelecimentoService.selectEstabelecimento.telefone"  placeholder="Telefone" [required]=isRequired(estabelecimentoForm)>
+    <div class="validation-error" *ngIf="telefone.invalid && telefone.touched">Campo Obrigatório</div>
+  </div>
+  <div class="form-group col-md-7">
+    <input class="form-control" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="email" #email="ngModel" [(ngModel)]="estabelecimentoService.selectEstabelecimento.email" placeholder="E-Mail">
+    <div class="validation-error" *ngIf="email.errors?.pattern && email.touched">E-Mail Inválido</div>
+  </div>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <input class="form-control" mask="000-0" name="agencia" #agencia="ngModel" [(ngModel)]="estabelecimentoService.selectEstabelecimento.agencia" placeholder="Agência">
+  </div>
+  <div class="form-group col-md-6">
+    <input class="form-control" mask="00.000-0" name="conta" #conta="ngModel" [(ngModel)]="estabelecimentoService.selectEstabelecimento.conta" placeholder="Conta">
+  </div>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-3"></div>
+  <div class="form-group col-md-6">
+    <input class="form-control" name="data_inclusao" #data_inclusao="ngModel" [(ngModel)]="estabelecimentoService.selectEstabelecimento.data_inclusao" placeholder="Data Cadastro" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }" placement="top" style="text-align: center;">
+  </div>
+  <div class="form-group col-md-3"></div>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-8">
+    <button [disabled]="!estabelecimentoForm.valid" type="submit" class="btn btn-block btn-info"><i class="fa fa-floppy-o"></i> Salvar</button>
+  </div>
+  <div class="form-group col-md-4">
+      <button type="reset" class="btn btn-block btn-secondary" (click)="resetForm(estabelecimentoForm)"><i class="fa fa-repeat"></i> Limpar</button>
+  </div>
+</div>
+</form>
+

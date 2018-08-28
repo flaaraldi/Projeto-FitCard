@@ -1,0 +1,56 @@
+@model IEnumerable<PrjFitCard.Model.Estabelecimento>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-sm table-hover">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.razao_social)</th>
+            <th>@Html.DisplayNameFor(model => model.nome_fantasia)</th>
+            <th>@Html.DisplayNameFor(model => model.cnpj)</th>
+            <th>@Html.DisplayNameFor(model => model.email)</th>
+            <th>@Html.DisplayNameFor(model => model.endereco)</th>
+            <th>@Html.DisplayNameFor(model => model.cidade)</th>
+            <th>@Html.DisplayNameFor(model => model.estado)</th>
+            <th>@Html.DisplayNameFor(model => model.telefone)</th>
+            <th>@Html.DisplayNameFor(model => model.id_categoria)</th>
+            <th>@Html.DisplayNameFor(model => model.id_status)</th>
+            <th>@Html.DisplayNameFor(model => model.conta)</th>
+            <th>@Html.DisplayNameFor(model => model.agencia)</th>
+            <th>@Html.DisplayNameFor(model => model.data_inclusao)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.razao_social)</td>
+            <td>@Html.DisplayFor(modelItem => item.nome_fantasia)</td>
+            <td>@Html.DisplayFor(modelItem => item.cnpj)</td>
+            <td>@Html.DisplayFor(modelItem => item.email)</td>
+            <td>@Html.DisplayFor(modelItem => item.endereco)</td>
+            <td>@Html.DisplayFor(modelItem => item.cidade)</td>
+            <td>@Html.DisplayFor(modelItem => item.estado)</td>
+            <td>@Html.DisplayFor(modelItem => item.telefone)</td>
+            <td>@Html.DisplayFor(modelItem => item.id_categoria)</td>
+            <td>@Html.DisplayFor(modelItem => item.id_status)</td>
+            <td>@Html.DisplayFor(modelItem => item.conta)</td>
+            <td>@Html.DisplayFor(modelItem => item.agencia)</td>
+            <td>@Html.DisplayFor(modelItem => item.data_inclusao)</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.seq">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.seq">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.seq">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

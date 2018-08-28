@@ -1,0 +1,22 @@
+<table class="table table-sm table-hover">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Categoria</th>
+            <th></th>
+          </tr>
+      </thead>
+  <tr *ngFor="let categoria of categorias">
+    <td>{{categoria.seq}}</td>
+    <td>{{categoria.descricao}}</td>
+    <td>
+      <a class="btn" (click)="showForEdit(categoria)">
+        <i class="fa fa-pencil-square-o"></i>
+      </a>
+      <a class="btn text-danger" (click)="onDelete(categoria)">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </td>
+  </tr>
+</table>
+

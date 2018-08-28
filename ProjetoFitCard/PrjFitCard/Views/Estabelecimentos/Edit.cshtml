@@ -1,0 +1,120 @@
+@model PrjFitCard.Model.Estabelecimento
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Estabelecimento</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="seq" />
+        <div class="form-group">
+            <label asp-for="razao_social" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="razao_social" class="form-control" />
+                <span asp-validation-for="razao_social" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="nome_fantasia" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="nome_fantasia" class="form-control" />
+                <span asp-validation-for="nome_fantasia" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="cnpj" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="cnpj" class="form-control" />
+                <span asp-validation-for="cnpj" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="email" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="endereco" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="endereco" class="form-control" />
+                <span asp-validation-for="endereco" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="cidade" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="cidade" class="form-control" />
+                <span asp-validation-for="cidade" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="estado" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="estado" class="form-control" />
+                <span asp-validation-for="estado" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="telefone" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="telefone" class="form-control" />
+                <span asp-validation-for="telefone" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="id_categoria" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="id_categoria" class="form-control" />
+                <span asp-validation-for="id_categoria" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="id_status" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="status" class="form-control" />
+                <span asp-validation-for="id_status" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="conta" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="conta" class="form-control" />
+                <span asp-validation-for="conta" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="agencia" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="agencia" class="form-control" />
+                <span asp-validation-for="agencia" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="data_inclusao" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="data_inclusao" class="form-control" />
+                <span asp-validation-for="data_inclusao" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
