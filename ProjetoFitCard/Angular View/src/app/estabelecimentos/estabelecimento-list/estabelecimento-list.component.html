@@ -1,0 +1,31 @@
+
+<table class="table table-sm table-hover">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Razão Social</th>
+            <th>CNPJ</th>
+            <th></th>
+          </tr>
+      </thead>
+  <tr *ngFor="let estabelecimento of estabelecimentos">
+    <td>{{estabelecimento.seq}}</td>
+    <td>{{estabelecimento.razao_social}}</td>
+    <td>{{estabelecimento.cnpj | mask: '00.000.000/0000-00'}}</td>
+    <!--
+    <td>{{estabelecimento.nome_fantasia}}</td>
+    <td>{{estabelecimento.email}}</td>
+    <td>{{estabelecimento.categoria}}</td>
+    <td>{{estabelecimento.status}}</td>
+    <td>{{estabelecimento.conta}}</td>
+    <td>{{estabelecimento.agencia}}</td>-->
+    <td>
+      <a class="btn" (click)="showForEdit(estabelecimento)">
+        <i class="fa fa-pencil-square-o"></i>
+      </a>
+      <a class="btn text-danger" (click)="onDelete(estabelecimento)">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </td>
+  </tr>
+</table>
